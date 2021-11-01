@@ -1,0 +1,34 @@
+---
+title: "Untitled"
+author: "sotastica"
+date: "10/19/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+read_excel()
+```
+
+```{r}
+library(readxl)
+df <- read_excel(path = 'data/internet_usage_spain.xlsx', sheet = 2)
+df
+```
+
+```{r}
+library(dplyr)
+df %>% #pipe
+  select(age)
+```
+
+
+```{r}
+df %>% #pipe
+  group_by(education) %>% 
+  summarise(media = mean(age))
+```
+
